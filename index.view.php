@@ -15,10 +15,18 @@
 
 </head>
 <body>
-    <header>
-        <h1>
-            <?= $greeting; ?>
-        </h1>
-    </header>
+    <ul>
+        <!-- one method -->
+        <?php foreach ($names as $name) : ?>
+            <li><?= $name; ?></li>
+        <?php endforeach; ?>
+
+        <!-- second method -->
+        <?php
+            foreach ($names as $name) {
+                echo "<li>$name</li>";
+            }
+        ?>
+    </ul>
 </body>
 </html>
