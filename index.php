@@ -19,12 +19,14 @@
         <h1>
             <?php
                 // standard way
-                $name = $_GET['name'];
+                $name = htmlspecialchars($_GET['name']);
                 echo "Hello $name!";
+
+                // use htmlspecialchars() to prevent script injection
             ?>
         </h1>
     </header>
-    <h1><?php echo "Hello " . $_GET['name']; // another way ?></h1>
-    <h1><?= "Hello " . $_GET['name']; // shorter way ?></h1>
+    <h1><?php echo "Hello " . htmlspecialchars($_GET['name']); // another way ?></h1>
+    <h1><?= "Hello " . htmlspecialchars($_GET['name']); // shorter way ?></h1>
 </body>
 </html>
