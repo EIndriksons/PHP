@@ -20,13 +20,20 @@
         <?php foreach ($names as $name) : ?>
             <li><?= $name; ?></li>
         <?php endforeach; ?>
-
+    </ul>
+    <ul>
         <!-- second method -->
         <?php
             foreach ($names as $name) {
                 echo "<li>$name</li>";
             }
         ?>
+    </ul>
+    <ul>
+        <!-- associative array method -->
+        <?php foreach ($person as $key => $val) : ?>
+            <li><strong><?= $key; ?></strong> <?= $val; ?></li>
+        <?php endforeach; ?>
     </ul>
 </body>
 </html>
