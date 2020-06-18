@@ -6,7 +6,7 @@
     <title>PHP</title>
 
     <style>
-        header {
+        body {
             background: #e3e3e3;
             padding: 2em;
             text-align: center;
@@ -15,25 +15,21 @@
 
 </head>
 <body>
+    <h1>Task for the Day</h1>
     <ul>
-        <!-- one method -->
-        <?php foreach ($names as $name) : ?>
-            <li><?= $name; ?></li>
+        <!-- One method -->
+        <?php foreach ($tasks as $task => $value) : ?>
+            <li>
+                <strong><?= ucwords($task); ?>: </strong> <?= $value; ?>
+            </li>
         <?php endforeach; ?>
     </ul>
     <ul>
-        <!-- second method -->
-        <?php
-            foreach ($names as $name) {
-                echo "<li>$name</li>";
-            }
-        ?>
-    </ul>
-    <ul>
-        <!-- associative array method -->
-        <?php foreach ($person as $key => $val) : ?>
-            <li><strong><?= $key; ?></strong> <?= $val; ?></li>
-        <?php endforeach; ?>
+        <!-- Another method -->
+            <li><strong>Title: </strong><?= $tasks['title']; ?></li>
+            <li><strong>Due: </strong><?= $tasks['due']; ?></li>
+            <li><strong>Assigned To: </strong><?= $tasks['assigned_to']; ?></li>
+            <li><strong>Completed: </strong><?= $tasks['completed'] ? 'Complete' : 'Incomplete'; ?></li> <!-- Ternary operator for True/False -->
     </ul>
 </body>
 </html>
