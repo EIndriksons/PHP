@@ -29,7 +29,16 @@
             <li><strong>Title: </strong><?= $tasks['title']; ?></li>
             <li><strong>Due: </strong><?= $tasks['due']; ?></li>
             <li><strong>Assigned To: </strong><?= $tasks['assigned_to']; ?></li>
-            <li><strong>Completed: </strong><?= $tasks['completed'] ? 'Complete' : 'Incomplete'; ?></li> <!-- Ternary operator for True/False -->
+            <li>
+                <strong>Completed: </strong>
+                <?php 
+                    if ($tasks['completed']) {
+                        echo '&#9989';
+                    } else {
+                        echo 'Incomplete';
+                    }
+                ?>
+            </li> <!-- Ternary operator for True/False -->
     </ul>
 </body>
 </html>
