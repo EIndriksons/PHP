@@ -31,13 +31,11 @@
             <li><strong>Assigned To: </strong><?= $tasks['assigned_to']; ?></li>
             <li>
                 <strong>Completed: </strong>
-                <?php 
-                    if ($tasks['completed']) {
-                        echo '&#9989';
-                    } else {
-                        echo 'Incomplete';
-                    }
-                ?>
+                <?php if ($tasks['completed']) : ?>
+                    <span class="icon">&#9989</span>
+                <?php else : ?>
+                    <span class="icon">Incomplete</span>
+                <?php endif; ?>
             </li> <!-- Ternary operator for True/False -->
     </ul>
 </body>
