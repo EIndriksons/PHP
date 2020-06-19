@@ -15,28 +15,14 @@
 
 </head>
 <body>
-    <h1>Task for the Day</h1>
-    <ul>
-        <!-- One method -->
-        <?php foreach ($tasks as $task => $value) : ?>
-            <li>
-                <strong><?= ucwords($task); ?>: </strong> <?= $value; ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-    <ul>
-        <!-- Another method -->
-            <li><strong>Title: </strong><?= $tasks['title']; ?></li>
-            <li><strong>Due: </strong><?= $tasks['due']; ?></li>
-            <li><strong>Assigned To: </strong><?= $tasks['assigned_to']; ?></li>
-            <li>
-                <strong>Completed: </strong>
-                <?php if ($tasks['completed']) : ?>
-                    <span class="icon">&#9989</span>
-                <?php else : ?>
-                    <span class="icon">Incomplete</span>
-                <?php endif; ?>
-            </li> <!-- Ternary operator for True/False -->
-    </ul>
+    <?php foreach ($tasks as $task) : ?>
+        <li>
+            <?php if ($task->isComplete()) : ?>
+                <strike><?= $task->description(); ?></strike>
+            <?php else : ?>
+                <?= $task->description(); ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
 </body>
 </html>
