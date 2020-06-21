@@ -3,7 +3,6 @@
 $query = require 'bootstrap.php';
 require 'Task.php';
 
+$router = new Router;
 
-$tasks = $query->selectAll('todos', 'Task');
-
-require 'index.view.php';
+require 'routes.php';
